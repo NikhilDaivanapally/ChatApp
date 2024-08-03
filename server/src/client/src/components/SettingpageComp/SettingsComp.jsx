@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import "./SettingComp.css";
+import { useNavigate } from "react-router-dom";
 const SettingsComp = () => {
+  const Navigate = useNavigate();
   const inputRef = useRef(null);
 
   const settingList = ["Change Theme"];
@@ -49,10 +51,16 @@ const SettingsComp = () => {
       }
     }
   }, []);
+
+  const handleBack = () => {
+    Navigate(-1);
+  };
+  
   return (
     <div className="Settings_Sections">
       <div className="Top_Section">
         <div className="Top_bar">
+          <MdKeyboardArrowLeft onClick={handleBack} />
           <p className="left title">Settings</p>
         </div>
       </div>

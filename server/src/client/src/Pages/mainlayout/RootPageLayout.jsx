@@ -52,9 +52,9 @@ const RootPageLayout = () => {
     getConversation,
     { isSuccess: isgetConversationSuccess, data: getConversationData },
   ] = useGetConversationMutation();
-  
+
   const [logout, { isError, isSuccess: isLogoutSuccess }] = useLogoutMutation();
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const Navigates = [
     {
       icon: <MdOutlineChatBubbleOutline />,
@@ -75,9 +75,13 @@ const RootPageLayout = () => {
       name: "Settings",
     },
   ];
-  const CurrentIndex = Navigates.findIndex(el => el.navigate === pathname)
+  const CurrentIndex = Navigates.findIndex((el) => el.navigate === pathname);
   const [activeIndex, setActiveIndex] = useState(CurrentIndex || 0);
 
+  useEffect(() => {
+    const CurrentIndex = Navigates.findIndex((el) => el.navigate === pathname);
+    setActiveIndex(CurrentIndex);
+  }, [pathname]);
 
   // user Dialogmenu
   const handletoggleopenDialog = () => {
@@ -356,16 +360,16 @@ const RootPageLayout = () => {
         {/* topfield */}
         <ul className="topfield">
           {Navigates.map(({ icon, active_icon, navigate, name }, index) => (
-            <li
+            <Link
+              to={navigate}
               key={index}
               className={`navigate ${activeIndex == index ? "active" : ""}`}
-              onClick={() => handleChangeactiveIndex(index)}
             >
-              <Link to={navigate}>
+              <li onClick={() => handleChangeactiveIndex(index)}>
                 {activeIndex === index ? active_icon : icon}
                 <p className="navigate_name">{name}</p>
-              </Link>
-            </li>
+              </li>
+            </Link>
           ))}
         </ul>
         {/* bottomfield */}

@@ -17,7 +17,14 @@
   /* background-color: red; */
 }
 .Settings_Sections .Top_Section .Top_bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   font-size: 1.3rem;
+}
+.Settings_Sections .Top_Section .Top_bar svg {
+  font-size: 1.7rem;
+  cursor: pointer;
 }
 .Settings_Sections .title {
   font-size: 1.5rem;
@@ -114,7 +121,9 @@ input[type="checkbox"]:checked:before {
   bottom: 17%;
   box-shadow: inset 15px -4px 0px 15px rgb(255, 197, 89);
   background: var(--background);
-  transition: transform 0.5s, box-shadow 0.5s;
+  transition:
+    transform 0.5s,
+    box-shadow 0.5s;
 }
 
 /* .switch-container input:checked + .slider {
@@ -125,5 +134,3 @@ input[type="checkbox"]:checked:before {
   transform: translateX(100%);
   box-shadow: inset 9px -4px 0px 0px var(--bg-color);
 }
-
-

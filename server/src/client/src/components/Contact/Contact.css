@@ -42,8 +42,7 @@
 .Close_Sidebar_Conatiner {
   font-size: 1.2rem;
   width: 100%;
-  /* background-color: red; */
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -53,12 +52,9 @@
   border-radius: 50%;
   cursor: pointer;
 }
-.Close_Sidebar:hover {
-  background-color: rgb(228, 228, 228);
-}
+
 .Contact_info {
   flex: 1;
-  /* background-color: lightcoral; */
 }
 
 .Contact_details {

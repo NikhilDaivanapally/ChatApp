@@ -844,11 +844,11 @@
     display: block;
   }
   .Selected_Conversation {
-    margin-top:15vh;
-    height: 85vh;
+    margin-top:10vh;
+    height: 90vh;
   }
   .loader_container {
-    height: 85vh;
+    height: 90vh;
   }
   .Selected_Conversation .header,
   .Selected_Conversation .footer {
